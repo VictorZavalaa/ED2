@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use 
+
 class VuelosController extends Controller
 {
     /**
@@ -11,7 +13,8 @@ class VuelosController extends Controller
      */
     public function index()
     {
-        //
+        $vuelos = Vuelo::all();
+        return view('vuelos.index', compact('vuelos'));
     }
 
     /**
@@ -19,7 +22,7 @@ class VuelosController extends Controller
      */
     public function create()
     {
-        //
+        return view('vuelos.create');
     }
 
     /**
@@ -27,7 +30,16 @@ class VuelosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Vuelo::create([
+            'horaSalidaTerminal' => $request->horaSalidaTerminal,
+            'horaEstimadaLlegada' => $request->horaEstimadaLlegada,
+            'terSalida' => $request->terSalida,
+            'terLlegada' => $request->terLlegada,
+            'ciudadSalida' => $request->ciudadSalida,
+            'ciudadLlegada' => $request->ciudadLlegada,
+            'nomPiloto' => $request->nomPiloto,
+        ]);
+        
     }
 
     /**
