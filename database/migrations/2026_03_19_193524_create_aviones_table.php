@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('aviones', function (Blueprint $table) {
             $table->id();
+            $table->string('modelo');
+            $table->string('fabricante');
+            $table->double('capacidadPasa');
+            $table->double('capacidadCarg');
+            $table->string('anioFabr');
             $table->timestamps();
         });
     }
