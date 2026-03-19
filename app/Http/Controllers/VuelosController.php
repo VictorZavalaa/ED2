@@ -55,7 +55,7 @@ class VuelosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('vuelos.edit', compact('vuelos'));
     }
 
     /**
@@ -63,7 +63,15 @@ class VuelosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'horaSalidaTerminal' => 'request',
+            'horaEstimadaLlegada' => 'request',
+            'terSalida' => 'request',
+            'terLlegada' => 'request',
+            'ciudadSalida' => 'request',
+            'ciudadLlegada' => 'request',
+            'nomPiloto' => 'request'
+        ]);
     }
 
     /**
@@ -71,6 +79,9 @@ class VuelosController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $vuelos->delete();
+
+        return redirect()->route('vuelos.index')
+            ->with('success', 'Vuelo eliminado correctamente');
     }
 }

@@ -34,7 +34,7 @@
                     <a href="{{ route('vuelos.update', $vuelo) }}" class="btn btn-success">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </a>
-                    <form action="">
+                    <form action="{{ route('vuelos.destroy', $vuelo) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-success" onclick="return confirm('¿Deseas eliminar el vuelo?')">
