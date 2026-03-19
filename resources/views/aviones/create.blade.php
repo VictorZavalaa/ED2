@@ -31,6 +31,7 @@
         <br><br>
 
         <button type="submit">Registrar</button>
+    </form>
 
 </body>
 
