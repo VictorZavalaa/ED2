@@ -30,7 +30,6 @@
         <input type="text" id="anioFabr" name="Año de fabricación" required>
         <br><br>
 
-
         <button type="submit">Registrar</button>
 
 </body>

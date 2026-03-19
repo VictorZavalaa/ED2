@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Avion;
+
 use Illuminate\Http\Request;
 
 class AvionesController extends Controller
@@ -11,7 +13,8 @@ class AvionesController extends Controller
      */
     public function index()
     {
-        //
+        $aviones = Avion::all();
+        return view('aviones.index', compact('aviones'));
     }
 
     /**
@@ -22,12 +25,18 @@ class AvionesController extends Controller
         return view('aviones.create');
     }
 
-    /**
+    /*
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        Avion::create([
+            'modelo' => $request->modelo,
+            'fabricante' => $request->fabricante,
+            'capacidadPasa' => $request->capacidadPasa,
+            'capacidadCarg' => $request->capacidadCarg,
+            'anioFabr' => $request->anioFabr
+        ]);
     }
 
     /**
