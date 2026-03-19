@@ -43,7 +43,7 @@ class AuthController extends Controller
         //Inicio de sesion automatico
         Auth::login($user);
 
-        return redirect()->route('libros.index');
+        return redirect()->route('aviones.index');
     }
 
     public function loginForm()
