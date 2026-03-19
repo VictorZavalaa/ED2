@@ -19,7 +19,7 @@ class AvionesController extends Controller
      */
     public function create()
     {
-        //
+        return view('aviones.create');
     }
 
     /**
