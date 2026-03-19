@@ -9,7 +9,26 @@
 </head>
 
 <body>
-    <h1>Cre</h1>
+    <h1>Registro de aviones</h1>
+    <form action="{{ route('aviones.store') }}" method="POST">
+        @csrf
+
+        <input type="number" id="id" name="id" required>
+        <br><br>
+
+        <input type="text" id="modelo" name="modelo" required>
+        <br><br>
+
+        <input type="number" id="pasajeros" name="pasajeros" required>
+        <br><br>
+
+        <input type="number" id="carga" name="carga" required>
+        <br><br>
+
+        <input type="number" id="year" name="year" required>
+        <br><br>
+
+        <button type="submit">Registrar</button>
 
 </body>
 
