@@ -10,7 +10,7 @@
     
     <h1>Registro de Vuelos</h1>
 
-    <form action="{{ route('vuelos.store')}}" method="post">
+    <form action="{{ route('vuelos.store') }}" method="post">
 
         @csrf
 

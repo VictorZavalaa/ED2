@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vuelo;
+
 use Illuminate\Http\Request;
 
 class VuelosController extends Controller
