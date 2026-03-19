@@ -37,6 +37,7 @@ class AvionesController extends Controller
             'capacidadCarg' => $request->capacidadCarg,
             'anioFabr' => $request->anioFabr
         ]);
+        return redirect()->route('aviones.create');
     }
 
     /**
@@ -50,9 +51,9 @@ class AvionesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Avion $aviones)
     {
-        //
+        return view('aviones.edit', compact('aviones'));
     }
 
     /**
@@ -79,6 +80,7 @@ class AvionesController extends Controller
     public function destroy(Avion $aviones)
     {
         $aviones->delete();
+
         return redirect()->route('aviones.index')
             ->with('success', 'Avion eliminado correctamente');
     }
