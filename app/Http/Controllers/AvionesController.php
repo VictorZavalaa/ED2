@@ -58,9 +58,20 @@ class AvionesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Avion $aviones)
     {
-        //
+        //validaciones
+        $request->validate([
+            'modelo' => 'required',
+            'fabricante' => 'required',
+            'capacidadPasa' => 'required|integer',
+            'capacidadCarg' => 'required|integer',
+            'anioFabr' => 'required|integer'
+        ]);
+
+        $aviones->update($request->all());
+        return redirect()->route('aviones.index')
+            ->with('success', 'Avion actualizado correctamente');
     }
 
     /**
