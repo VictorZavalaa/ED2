@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <h1>Registro de aviones</h1>
     <form action="{{ route('aviones.store') }}" method="POST">
         @csrf
@@ -19,7 +20,11 @@
         <input type="text" id="modelo" name="modelo" required>
         <br><br>
 
-        <input type="number" id="pasajeros" name="pasajeros" required>
+        <input type="text" id="capacidadPasa" name="modelo" required>
+        <br><br>
+
+
+        <input type="number" id="capacidadCarg" name="pasajeros" required>
         <br><br>
 
         <input type="number" id="carga" name="carga" required>
