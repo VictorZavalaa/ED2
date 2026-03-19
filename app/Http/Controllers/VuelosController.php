@@ -39,7 +39,6 @@ class VuelosController extends Controller
             'ciudadLlegada' => $request->ciudadLlegada,
             'nomPiloto' => $request->nomPiloto,
         ]);
-        
     }
 
     /**
@@ -77,7 +76,7 @@ class VuelosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Vuelo $vuelos)
     {
         $vuelos->delete();
 
