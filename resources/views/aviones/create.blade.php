@@ -14,24 +14,22 @@
     <form action="{{ route('aviones.store') }}" method="POST">
         @csrf
 
-        <input type="number" id="id" name="id" required>
+        <input type="text" id="modelo" name="Modelo" required>
         <br><br>
 
-        <input type="text" id="modelo" name="modelo" required>
+        <input type="text" id="fabricante" name="Fabricante" required>
         <br><br>
 
-        <input type="text" id="capacidadPasa" name="modelo" required>
+        <input type="number" id="capacidadPasa" name="Capacidad de pasajeros" required>
         <br><br>
 
 
-        <input type="number" id="capacidadCarg" name="pasajeros" required>
+        <input type="number" id="capacidadCarg" name="Capacidad de carga" required>
         <br><br>
 
-        <input type="number" id="carga" name="carga" required>
+        <input type="text" id="anioFabr" name="Año de fabricación" required>
         <br><br>
 
-        <input type="number" id="year" name="year" required>
-        <br><br>
 
         <button type="submit">Registrar</button>
 
