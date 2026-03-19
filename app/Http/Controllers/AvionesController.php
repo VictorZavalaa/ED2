@@ -73,12 +73,13 @@ class AvionesController extends Controller
         return redirect()->route('aviones.index')
             ->with('success', 'Avion actualizado correctamente');
     }
-
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Avion $aviones)
     {
-        //
+        $aviones->delete();
+        return redirect()->route('aviones.index')
+            ->with('success', 'Avion eliminado correctamente');
     }
 }
