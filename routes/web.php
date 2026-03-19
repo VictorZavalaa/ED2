@@ -13,10 +13,12 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
 
     //Usar los metodos del controlador en las rutas
-    Route::resource('vuelos', VuelosController::class);
 
-    Route::resource('aviones', AvionesController::class);
 });
+
+Route::resource('vuelos', VuelosController::class);
+
+Route::resource('aviones', AvionesController::class);
 
 // Vuelos
 
