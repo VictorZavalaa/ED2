@@ -11,8 +11,12 @@
 <body>
 
 
-
     <h1>AVIONES DISPONIBLES</h1>
+
+    <a href=" {{ route('aviones.create') }} ">
+        <button>REGISTRAR NUEVO AVIÓN</button>
+    </a>
+
     <table border="1">
         <thead>
             <tr>
@@ -33,10 +37,10 @@
                 <td>{{ $avion->capacidadCarg }}</td>
                 <td>{{ $avion->anioFabr }}</td>
                 <td>
-                    <a href="">
+                    <a href="{{ route('aviones.edit', $avion->id) }} ">
                         <button>EDITAR</button>
                     </a>
-                    <a href="">
+                    <a href="{{ route('aviones.destroy', $avion->id) }} ">
                         <button>ELIMINAR</button>
                     </a>
                 </td>
