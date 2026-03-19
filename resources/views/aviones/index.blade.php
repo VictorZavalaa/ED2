@@ -9,6 +9,37 @@
 </head>
 
 <body>
+    <h1>AVIONES DISPONIBLES</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Modelo</th>
+                <th>Fabricante</th>
+                <th>Capacidad de pasajeros</th>
+                <th>Capacidad de carga</th>
+                <th>Año de fabricacion</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody>
+        @foreach ($aviones as $avion)
+            <tr>
+                <td>{{ $avion->modelo }}</td>
+                <td>{{ $avion->fabricante }}</td>
+                <td>{{ $avion->capacidadPasa }}</td>
+                <td>{{ $avion->capacidadCarg }}</td>
+                <td>{{ $avion->anioFabr }}</td>
+                <td>
+                    <a href="">
+                        <button>EDITAR</button>
+                    </a>
+                    <a href="">
+                        <button>ELIMINAR</button>
+                    </a>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
 
 </body>
 
