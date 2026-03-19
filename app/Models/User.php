@@ -22,7 +22,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin'
     ];
+
+
+    //Generar el cast par acmabiar el valor numerico a boolean
+    protected $casts = [
+        'is_admin' => 'boolean',
+    ];
+
 
     /**
      * The attributes that should be hidden for serialization.
